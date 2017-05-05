@@ -1,14 +1,14 @@
 {
-  "name": "create-graphql",
+  "name": "create-graphql--arangoose",
   "description": "Create production-ready GraphQL servers",
   "version": "1.1.17",
   "author": {
-    "name": "Lucas Bento",
-    "email": "lucas.bsilva@outlook.com",
+    "name": "jfa",
+    "email": "",
     "url": "https://github.com/lucasbento"
   },
   "bin": {
-    "create-graphql": "./bin/create-graphql"
+    "create-graphql--arangoose": "./bin/create-graphql--arangoose"
   },
   "bugs": "https://github.com/lucasbento/create-graphql/issues",
   "dependencies": {

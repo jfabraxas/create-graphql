@@ -4,13 +4,13 @@
     "connection": "connection",
     "loader": "loader",
     "model": "model",
-    "mutation": "mutation",
-    "mutation_test": "mutation/__tests__",
-    "type": "type",
-    "type_test": "type/__tests__",
-    "interface": "interface"
+    "mutation": "schema/mutation",
+    "mutation_test": "schema/mutation/__tests__",
+    "type": "schema/type",
+    "type_test": "schema/type/__tests__",
+    "interface": "schmea/interface"
   },
   "files": {
-    "schema": "schema"
+    "schema": "schema/index.js"
   }
 }

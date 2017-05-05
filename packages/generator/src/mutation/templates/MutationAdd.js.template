@@ -15,7 +15,7 @@ import <%= name %>Loader from '<%= directories.loader %>/<%= name %>Loader';
 import <%= name %>Connection from '<%= directories.connection %>/<%= name %>Connection';
 
 export default mutationWithClientMutationId({
-  name: '<%= name %>Add',
+  name: 'create<%= name %>',
   inputFields: {
     example: {
       type: new GraphQLNonNull(GraphQLString),

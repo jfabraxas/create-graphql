@@ -2,9 +2,7 @@
 
 import {
   GraphQLString,
-  <%_ for (i in schema.addDependencies) { -%>
-  <%= schema.addDependencies[i] %>,
-  <%_ } -%>
+  GraphQLNonNull,
 } from 'graphql';
 import {
   mutationWithClientMutationId,
@@ -16,40 +14,24 @@ import <%= name %> from '<%= directories.model %>/<%= name %>';
 import <%= name %>Loader from '<%= directories.loader %>/<%= name %>Loader';
 import <%= name %>Connection from '<%= directories.connection %>/<%= name %>Connection';
 
-import ViewerType from '<%= directories.type %>/ViewerType';
-
 export default mutationWithClientMutationId({
-  name: 'create<%= name %>',
+  name: 'delete<%= name %>',
   inputFields: {
-    <%_ for (field of schema.fields) { -%>
-    <%- field.name %>: {
-      type: <%= field.type %>,
+    example: {
+      type: new GraphQLNonNull(GraphQLString),
+      description: 'My example field',
     },
-    <%_ } -%>
   },
-  mutateAndGetPayload: async (args, { user }) => {
+  mutateAndGetPayload: async ({ example }, { user }) => {
     // Verify if user is authorized
     if (!user) {
       throw new Error('Unauthorized user');
     }
 
-    const {
-      <%_ for (field of schema.fields) { -%>
-      <%- field.name %>,
-      <%_ } -%>
-    } = args;
-
-    // Create new record
-    const <%= camelCaseName %> = await new <%= name %>({
-      <%_ for (field of schema.fields) { -%>
-      <%- field.name %>,
-      <%_ } -%>
-    }).save();
-
     // TODO: mutation logic
 
     return {
-      id: <%= camelCaseName %>._id,
+      // id: id, // ID of the newly created row
       error: null,
     };
   },
@@ -72,10 +54,6 @@ export default mutationWithClientMutationId({
           node: <%= camelCaseName %>,
         };
       },
-    },
-    viewer: {
-      type: ViewerType,
-      resolve: async (obj, args, { user }) => user,
     },
     error: {
       type: GraphQLString,

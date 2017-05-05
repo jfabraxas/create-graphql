@@ -1,9 +1,9 @@
 {
   "license": "MIT",
   "author": {
-    "name": "Lucas Bento",
-    "email": "lucas.bsilva@outlook.com",
-    "url": "https://github.com/lucasbento"
+    "name": "jfa",
+    "email": "",
+    "url": "https://github.com/jfabraxas/create-graphql--arangoose"
   },
   "devDependencies": {
     "babel-cli": "^6.24.0",

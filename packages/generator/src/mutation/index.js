@@ -80,17 +80,24 @@ class MutationGenerator extends Generator {
 
     const mutations = {
       add: {
-        fileName: `${name}Add`,
+        fileName: `create${name}`,
         template: {
           withSchema: 'MutationAddWithSchema.js.template',
           regular: 'MutationAdd.js.template',
         },
       },
       edit: {
-        fileName: `${name}Edit`,
+        fileName: `update${name}`,
         template: {
           withSchema: 'MutationEditWithSchema.js.template',
           regular: 'MutationEdit.js.template',
+        },
+      },
+      remove: {
+        fileName: `delete${name}`,
+        template: {
+          withSchema: 'MutationRemoveWithSchema.js.template',
+          regular: 'MutationRemove.js.template',
         },
       },
     };

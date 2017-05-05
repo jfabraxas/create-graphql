@@ -16,7 +16,7 @@ import <%= name %>Type from '<%= directories.type %>/<%= name %>Type';
 import <%= name %>Loader from '<%= directories.loader %>/<%= name %>Loader';
 
 export default mutationWithClientMutationId({
-  name: '<%= name %>Edit',
+  name: 'update<%= name %>',
   inputFields: {
     id: {
       type: new GraphQLNonNull(GraphQLID),

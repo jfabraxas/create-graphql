@@ -25,4 +25,32 @@ module.exports = `
                           /oooooo+-
                            \`-:::-\`
 
+                                       \`.--:://////:::--.\`                       
+                                  .-://++oosssssysssssoo+/:-.                   
+                               .://+ossyyhhhddddddddddhhhyso+/:.                
+                             .//+osyhhdddddddddddddddddddddhyso//-              
+                           .:/+syhddddddddddddddddddddddddddddhs+//.            
+                          -/+syhddddddddddddddddddddddddddddddddhs+/:\`          
+                         :/osyddddddddddddddddhhhhhhhdddddddddddddyo+/-         
+                        :/osyhhyyyyssssssssssoooossyyyyhdddddddddddhso/:.       
+                   \`\`.-:++oooossyyhhhddddddddhhyysoosyyyyhdddddddddddys+/-      
+            \`\`.-:/+oo++/::::::::/+oydddddddddddddhysosyyyyhdddddddddddhs+/:\`    
+        \`.:/ossyyhs/::-------------:/oyddddddddddddhsoyyyyyydddddddddddhyo//\`   
+     .:+osyhhdddy/:-------------------:+hddddddddddhy+yyyyyyyddddddddddddyo//\`  
+  \`-+ssyhddddddo:-----------------------:ydddddddddhs+yyyyyyydddddddddddddyo/:  
+ .+syhdddddddd+--------------------------:hddddddddy++yyyyyyyddddddddddddddy+/. 
+\`+yyhdddddddds----------------------------sdddddddyo/oyyyyyyyddddddddddddddhs// 
+:syhddddddddd/---------------------------/dddddddyo/+yyyyyyyddddddddddddddddy+/.
+/yydddddddddd+:------------------------:ohdddddhs+//syyyyyhdddddddddddddddddhs/-
+:yydddddddddddyo/::-----------------:/shdddddhyo///shhhhddddddddddddddddddddhs//
+.oyhdddddddddddddhyo+/::::::::::/+oyhddddddys+///+ydddddddddddddddddddddddddhy//
+ /syhdddddddddddddddddhhhhhhhhhddddddddhyso+////ohddddddddddddddddddddddddddhy//
+ ./syyddddddddddddddddddddddddddddddhyso+/////+yddddddddddddddddddddddddddddys/:
+  -/+syyhdddddddddddddddddddddddhyso+////////+shhddddddddddddddddddddddddddys+/\`
+   -//+oosyhhhdddddddddddhhhysoo+//////////:://+ooyyhhdddddddddddddddddddhys+/. 
+    .//////++oooooooooooo+++/////////////:.   \`.://++osyyhddddddddddddhyys+/:\`  
+     \`-////////////////////////////////:.         \`.:///+ossyyyyyyyysso+//:.    
+       \`-:///////////////////////////-\`               \`.--:///++++///::-.       
+          \`.://///////////////////-.                         \`\`\`\`\`\`             
+              \`\`.-::://////:::-.\` 
 `;
