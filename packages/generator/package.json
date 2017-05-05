@@ -1,13 +1,13 @@
 {
-  "name": "generator-graphql",
+  "name": "@jfa/generator-graphql--arangoose",
   "description": "Create production-ready GraphQL servers",
-  "version": "1.1.18",
+  "version": "1.1.19-0",
   "author": {
-    "name": "Lucas Bento",
-    "email": "lucas.bsilva@outlook.com",
-    "url": "https://github.com/lucasbento"
+    "name": "jfa",
+    "email": ".com",
+    "url": "https://github.com/jfabraxas"
   },
-  "bugs": "https://github.com/lucasbento/create-graphql/issues",
+  "bugs": "https://github.com/jfabraxas/create-graphql--arangoose/issues",
   "dependencies": {
     "babel-polyfill": "^6.20.0",
     "babylon": "^6.14.1",
@@ -35,7 +35,7 @@
     "generators/graphql-logo.js",
     "generators/graphqlrc.json"
   ],
-  "homepage": "https://github.com/lucasbento/create-graphql#readme",
+  "homepage": "https://github.com/jfabraxas/create-graphql--arangoose#readme",
   "keywords": [
     "apollo",
     "create",
@@ -52,7 +52,7 @@
   "preferGlobal": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/lucasbento/create-graphql"
+    "url": "https://github.com/jfabraxas/create-graphql--arangoose"
   },
   "scripts": {
     "build": "npm run clear && babel -d ./generators ./src --copy-files --ignore *.spec.js",
