@@ -5,12 +5,12 @@
   "author": {
     "name": "jfa",
     "email": "",
-    "url": "https://github.com/lucasbento"
+    "url": "https://github.com/jfabraxas"
   },
   "bin": {
     "create-graphql--arangoose": "./bin/create-graphql--arangoose"
   },
-  "bugs": "https://github.com/lucasbento/create-graphql/issues",
+  "bugs": "https://github.com/jfabraxas/create-graphql--arangoose/issues",
   "dependencies": {
     "babel-polyfill": "^6.20.0",
     "chalk": "^1.1.3",
@@ -23,7 +23,7 @@
     "yo": "^1.8.5"
   },
   "devDependencies": {},
-  "homepage": "https://github.com/lucasbento/create-graphql#readme",
+  "homepage": "https://github.com/jfabraxas/create-graphql--arangoose#readme",
   "keywords": [
     "apollo",
     "create",
@@ -39,7 +39,7 @@
   "preferGlobal": true,
   "repository": {
     "type": "git",
-    "url": "http://github.com/lucasbento/create-graphql"
+    "url": "https://github.com/jfabraxas/create-graphql--arangoose"
   },
   "scripts": {
     "build": "npm run clear && babel src --ignore *.spec.js --out-dir dist",
