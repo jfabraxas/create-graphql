@@ -1,0 +1,85 @@
+// @flow
+
+import {
+  GraphQLString,
+  <%_ for (i in schema.addDependencies) { -%>
+  <%= schema.addDependencies[i] %>,
+  <%_ } -%>
+} from 'graphql';
+import {
+  mutationWithClientMutationId,
+  toGlobalId,
+} from 'graphql-relay';
+
+import <%= name %> from '<%= directories.model %>/<%= name %>';
+
+import <%= name %>Loader from '<%= directories.loader %>/<%= name %>Loader';
+import <%= name %>Connection from '<%= directories.connection %>/<%= name %>Connection';
+
+import ViewerType from '<%= directories.type %>/ViewerType';
+
+export default mutationWithClientMutationId({
+  name: 'create<%= name %>',
+  inputFields: {
+    <%_ for (field of schema.fields) { -%>
+    <%- field.name %>: {
+      type: <%= field.type %>,
+    },
+    <%_ } -%>
+  },
+  mutateAndGetPayload: async (args, { user }) => {
+    // Verify if user is authorized
+    if (!user) {
+      throw new Error('Unauthorized user');
+    }
+
+    const {
+      <%_ for (field of schema.fields) { -%>
+      <%- field.name %>,
+      <%_ } -%>
+    } = args;
+
+    // Create new record
+    const <%= camelCaseName %> = await <%= name %>.add({
+      <%_ for (field of schema.fields) { -%>
+      <%- field.name %>,
+      <%_ } -%>
+    });
+
+    // TODO: mutation logic
+
+    return {
+      id: <%= camelCaseName %>._id,
+      error: null,
+    };
+  },
+  outputFields: {
+    <%= camelCaseName %>Edge: {
+      type: <%= name %>Connection.edgeType,
+      resolve: async ({ id }, args, { user }) => {
+        // Load new edge from loader
+        const <%= camelCaseName %> = await <%= name %>Loader.load(
+          user, id,
+        );
+
+        // Returns null if no node was loaded
+        if (!<%= camelCaseName %>) {
+          return null;
+        }
+
+        return {
+          cursor: toGlobalId('<%= name %>', <%= camelCaseName %>),
+          node: <%= camelCaseName %>,
+        };
+      },
+    },
+    viewer: {
+      type: ViewerType,
+      resolve: async (obj, args, { user }) => user,
+    },
+    error: {
+      type: GraphQLString,
+      resolve: ({ error }) => error,
+    },
+  },
+});

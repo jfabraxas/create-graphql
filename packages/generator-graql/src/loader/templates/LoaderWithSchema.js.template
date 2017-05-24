@@ -1,0 +1,56 @@
+// @flow
+
+import DataLoader from 'dataloader';
+import <%= name %>Model from '<%= directories.model %>/<%= name %>';
+import { connectionFromPromisedArray } from 'graphql-relay';
+import arangooseLoader from './arangooseLoader';
+
+type <%= name %>Type = {
+  id: string,
+  <%_ for (field of schema.fields) { -%>
+  <%- field.name + ': ' + field.flowType -%>,
+  <%_ } -%>
+}
+
+export default class <%= name %> {
+  id: string;
+  <%_ for (field of schema.fields) { -%>
+  <%- field.name + ': ' + field.flowType -%>;
+  <%_ } -%>
+
+  static getLoader = () => new DataLoader(ids => arangooseLoader(<%= name %>Model, ids));
+
+  constructor(data: <%= name %>Type) {
+    this.id = data.id;
+    <%_ for (field of schema.fields) { -%>
+    this.<%- field.name -%> = data.<%- field.name -%>;
+    <%_ } -%>
+  }
+
+  static viewerCanSee(viewer, data) {
+    // TODO: handle security
+
+    return true;
+  }
+
+  static async load(viewer, id) {
+    if (!id) {
+      return null;
+    }
+
+    const data = await <%= name %>.<%= rawName %>Loader.load(id.toString());
+
+    return <%= name %>.viewerCanSee(viewer, data) ? new <%= name %>(data) : null;
+  }
+
+  static clearCache(id) {
+    return <%= name %>.<%= rawName %>Loader.clear(id.toString());
+  }
+
+  static async load<%= pluralName %>(context, { connectionArguments, ...searchArgs }) {
+    // TODO: specify conditions
+    const <%= pluralCamelCaseName %> = <%= name %>Model
+      .find(searchArgs);
+    return connectionFromPromisedArray(<%= pluralCamelCaseName %>, connectionArguments);
+  }
+}

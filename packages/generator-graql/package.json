@@ -1,0 +1,65 @@
+{
+  "name": "generator-graql",
+  "description": "Create a GraphQL Arangoose Server",
+  "version": "1.1.993",
+  "author": {
+    "name": "",
+    "email": "",
+    "url": ""
+  },
+  "bugs": "https://github.com/jfabraxas/create-graql/issues",
+  "dependencies": {
+    "babel-polyfill": "^6.20.0",
+    "babylon": "^6.14.1",
+    "chalk": "^1.1.3",
+    "colors": "^1.1.2",
+    "lodash.last": "^3.0.0",
+    "lodash.merge": "^4.6.0",
+    "ora": "^1.2.0",
+    "pkg-dir": "^1.0.0",
+    "pluralize": "^4.0.0",
+    "ramda": "^0.23.0",
+    "recast": "^0.12.2",
+    "semver": "^5.1.0",
+    "shelljs": "^0.7.4",
+    "yeoman-generator": "^1.0.1"
+  },
+  "devDependencies": {},
+  "files": [
+    "generators/app",
+    "generators/type",
+    "generators/connection",
+    "generators/loader",
+    "generators/mutation",
+    "generators/test",
+    "generators/utils.js",
+    "generators/graphql-logo.js",
+    "generators/graphqlrc.json"
+  ],
+  "homepage": "https://github.com/jfabraxas/create-graql#readme",
+  "keywords": [
+    "apollo",
+    "create",
+    "generator",
+    "graphql",
+    "koa",
+    "relay",
+    "server",
+    "yeoman",
+    "yo",
+    "yeoman-generator"
+  ],
+  "license": "MIT",
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jfabraxas/create-graql"
+  },
+  "scripts": {
+    "build": "npm run clear && babel -d ./generators ./src --copy-files --ignore *.spec.js",
+    "clear": "rimraf ./generators",
+    "test": "jest",
+    "watch": "babel -w -d ./generators ./src --copy-files",
+    "prepublish": "npm run build"
+  }
+}

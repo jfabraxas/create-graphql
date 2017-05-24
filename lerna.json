@@ -1,8 +1,8 @@
 {
-  "lerna": "2.0.0-beta.38",
-  "version": "1.1.19-0",
+  "lerna": "2.0.0-rc.4",
+  "version": "1.2.6",
   "changelog": {
-    "repo": "jfabraxas/create-graphql--arangoose",
+    "repo": "jfabraxas/create-graql",
     "labels": {
       "new feature": ":rocket: New Feature",
       "enhancement": ":white_check_mark: Enhancement",

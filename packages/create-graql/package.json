@@ -1,0 +1,49 @@
+{
+  "name": "@jfa/create-graql",
+  "description": "Create production-ready GraphQL servers",
+  "version": "1.0.6",
+  "author": {
+    "name": "jfa"
+  },
+  "bin": {
+    "create-graql": "./bin/create-graql"
+  },
+  "bugs": "https://github.com/jfabraxas/create-graql/issues",
+  "dependencies": {
+    "babel-polyfill": "^6.20.0",
+    "chalk": "^1.1.3",
+    "commander": "^2.9.0",
+    "cross-spawn": "^5.0.1",
+    "cross-spawn-promise": "^0.10.1",
+    "ora": "^1.2.0",
+    "shelljs": "^0.7.5",
+    "yeoman-generator": "^0.24.1",
+    "yo": "^1.8.5"
+  },
+  "devDependencies": {},
+  "homepage": "https://github.com/jfabraxas/create-graql#readme",
+  "keywords": [
+    "apollo",
+    "create",
+    "generator",
+    "graphql",
+    "koa",
+    "relay",
+    "server",
+    "yeoman",
+    "yo"
+  ],
+  "license": "MIT",
+  "preferGlobal": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jfabraxas/create-graql"
+  },
+  "scripts": {
+    "build": "npm run clear && babel src --ignore *.spec.js --out-dir dist",
+    "clear": "rimraf ./dist",
+    "lint": "./node_modules/.bin/eslint -c .eslintrc ./src",
+    "postinstall": "npm i -g generator-graql",
+    "watch": "babel -w -d ./dist ./src"
+  }
+}
